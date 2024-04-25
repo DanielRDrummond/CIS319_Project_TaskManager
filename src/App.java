@@ -4,21 +4,58 @@
  * Assignment CIS319 Project - Task Manager App
  * Description: This class contains the main method to demonstrate the usage of the TaskManager class.
  */
-
- import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
  
- public class App {
+public class App {
     public static void main(String[] args) {
-        // Example usage of the classes
-        User user = new User("John Doe", "john.doe@example.com");
-        Task task1 = new Task("Complete project", "Finish the project by end of week", "2024-04-15", Priority.HIGH, Status.IN_PROGRESS);
-        Task task2 = new Task("Buy groceries", "Buy essentials from the supermarket", "2024-04-12", Priority.MEDIUM, Status.PENDING);
+        final String dbName = "TaskManager.db"; // Change the database name
+        System.out.println("\nDaniel Drummond, Week 4 Database Interactions GP\n");
 
-        TaskManager taskManager = new TaskManager();
-        taskManager.addTask(task1);
-        taskManager.addTask(task2);
+        // Establish connection to SQLite database
+        Connection conn = null;
+        try {
+            conn = SQLiteDatabase.connect(dbName);
+            if (conn != null) {
+                // Create table if it doesn't exist
+                if (TaskManagerTable.createTable(conn)) { // Change to TaskManagerTable
+                    // Perform CRUD operations
+                    // Add tasks
+                    TaskManager.addTask(conn, new Task("Complete project", "Finish the project by end of week", "2024-04-15", Priority.HIGH, Status.IN_PROGRESS));
+                    TaskManager.addTask(conn, new Task("Buy groceries", "Buy essentials from the supermarket", "2024-04-12", Priority.MEDIUM, Status.PENDING));
 
-        // Display tasks
-        taskManager.displayTasks();
+                    // Retrieve and print tasks
+                    System.out.println("\nAll Tasks in the Database");
+                    printTasks(TaskManager.getAllTasks(conn)); // Adjust method call
+
+                    // Update task
+                    Task taskToUpdate = new Task("Complete project", "Finish the project by end of week", "2024-04-15", Priority.HIGH, Status.IN_PROGRESS); // Provide the task details
+                    TaskManager.updateTask(conn, taskToUpdate);
+
+                    // Delete task
+                    TaskManager.deleteTask(conn, taskToUpdate); // Provide the task to delete
+
+                    // Retrieve and print tasks after update and delete
+                    System.out.println("\nAll Tasks in the Database");
+                    printTasks(TaskManager.getAllTasks(conn)); // Adjust method call
+                }
+            }
+        } finally {
+            // Close connection
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private static void printTasks(List<Task> tasks) { // Change parameter type to List<Task>
+        for (Task task : tasks) {
+            System.out.println(task);
+        }
     }
 }
