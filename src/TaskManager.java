@@ -1,13 +1,19 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
+ * Your name: Daniel Drummond
+ * Date: 04/21/2024
+ * Assignment CIS319 Project - Task Manager App
+ * 
  * Class for managing tasks.
  */
+
+ import java.sql.Connection;
+ import java.sql.PreparedStatement;
+ import java.sql.ResultSet;
+ import java.sql.SQLException;
+ import java.util.ArrayList;
+ import java.util.List;
+
+
 public class TaskManager {
     public static void addTask(Connection conn, Task task) {
         String sql = "INSERT INTO TaskManager(title, description, deadline, priority, status) VALUES(?, ?, ?, ?, ?)";

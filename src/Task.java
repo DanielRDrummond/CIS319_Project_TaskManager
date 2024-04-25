@@ -2,6 +2,7 @@
  * Your name: Daniel Drummond
  * Date: 04/21/2024
  * Assignment CIS319 Project - Task Manager App
+ * 
  * Description: This class defines a Task object with properties for title, description, deadline, priority, and status.
  */
 

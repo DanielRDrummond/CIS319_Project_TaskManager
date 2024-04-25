@@ -2,6 +2,7 @@
  * Your name: Daniel Drummond
  * Date: 04/21/2024
  * Assignment CIS319 Project - Task Manager App
+ * 
  * Description: This class defines a User object with properties for name and contact details.
  */
 
