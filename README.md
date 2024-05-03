@@ -1,18 +1,46 @@
-## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Task Manager App
 
-## Folder Structure
+The Task Manager App is a Java application that allows users to manage tasks efficiently. It provides CRUD (Create, Read, Update, Delete) operations on tasks stored in a SQLite database.
 
-The workspace contains two folders by default, where:
+Installation
+To run the Task Manager App locally, follow these steps:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Prerequisites
+Java Development Kit (JDK) installed on your machine
+Git installed on your machine (optional)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Clone the repository
+Clone the Task Manager App repository to your local machine:
+git clone https://github.com/DanielRDrummond/CIS319_Project_TaskManager.git
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Alternatively, you can download the ZIP file of the repository from the GitHub page and extract it to your desired location.
 
-## Dependency Management
+Compile the code
+Navigate to the project directory:
+cd task-manager-app
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Compile the Java source files using the following command:
+javac *.java
+
+Run the application
+Run the Task Manager App using the following command:
+java App
+
+This command will execute the main class of the application (App.java), which will start the Task Manager.
+
+
+Usage
+Once the Task Manager App is running, you can perform the following actions:
+
+Add tasks
+View all tasks
+Update tasks
+Delete tasks
+Follow the on-screen instructions to interact with the Task Manager.
+
+Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
