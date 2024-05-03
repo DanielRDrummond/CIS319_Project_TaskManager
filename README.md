@@ -10,6 +10,7 @@ To run the Task Manager App locally, follow these steps:
 
 - Java Development Kit (JDK) installed on your machine
 - Git installed on your machine (optional)
+- SQLite (included with the application)
 
 ### Clone the repository
 
@@ -55,6 +56,16 @@ Once the Task Manager App is running, you can perform the following actions:
 - Delete tasks
 
 Follow the on-screen instructions to interact with the Task Manager.
+
+## References
+
+The Task Manager App utilizes the SQLite database for data storage. We acknowledge the creators and contributors of SQLite for providing a lightweight, embedded database solution that is easy to use and integrates seamlessly with Java applications.
+
+- SQLite website: [https://www.sqlite.org/](https://www.sqlite.org/)
+- SQLite GitHub repository: [https://github.com/sqlite/sqlite](https://github.com/sqlite/sqlite)
+
+SQLite is a public domain software, and its usage is governed by its own license terms. For more information, please refer to the SQLite website and documentation.
+
 
 ## Contributing
 
